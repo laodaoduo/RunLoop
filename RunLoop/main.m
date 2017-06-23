@@ -11,6 +11,12 @@
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        
+        // UIApplicationMain 内部开启了死循环 保证主线程不退出 
+        int a = UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        
+        NSLog(@"来了");
+        return a;
+        
     }
 }
